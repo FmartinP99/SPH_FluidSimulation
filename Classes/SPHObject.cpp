@@ -2,13 +2,17 @@
 
 class SPHObject{
 private:
-    float weight;
-    float pos_x;
-    float pos_y;
-    float pos_z;
-    float speed_x;
-    float speed_y;
-    float speed_z;
+    double weight;
+    double px;
+    double py;
+    double pz;
+    double vx;
+    double vy;
+    double vz;
+    double ax;
+    double ay;
+    double az;
+    unsigned int grid;
 
 public:
 
@@ -16,8 +20,8 @@ public:
 
     }
 
-    SPHObject(float weight, float posX, float posY, float posZ, float speedX, float speedY, float speedZ) : weight(
-            weight), pos_x(posX), pos_y(posY), pos_z(posZ), speed_x(speedX), speed_y(speedY), speed_z(speedZ) {
+    SPHObject(double weight, double posX, double posY, double posZ, double speedX, double speedY, double speedZ) : weight(
+            weight), px(posX), py(posY), pz(posZ), vx(speedX), vy(speedY), vz(speedZ) {
         if (this->weight  <= 0){
             throw std::invalid_argument("The weight of the object must be bigger than 0!");
         }
@@ -27,63 +31,89 @@ public:
     }
 
 
-    float get_weight() const {
+    double get_weight() const {
         return weight;
     }
 
-    void set_weight(float weight) {
+    void set_weight(double weight) {
         if (weight <= 0){
             throw std::invalid_argument("The weight of the object must be bigger than 0!");
         }
         SPHObject::weight = weight;
     }
 
-    float get_pos_x() const {
-        return pos_x;
+    double get_px() const {
+        return px;
     }
 
-    void set_pos_x(float posX) {
-        pos_x = posX;
+    void set_px(double posX) {
+        px = posX;
     }
 
-    float get_pos_y() const {
-        return pos_y;
+    double get_py() const {
+        return py;
     }
 
-    void set_pos_y(float posY) {
-        pos_y = posY;
+    void set_py(double posY) {
+        py = posY;
     }
 
-    float get_pos_z() const {
-        return pos_z;
+    double get_pz() const {
+        return pz;
     }
 
-    void set_pos_z(float posZ) {
-        pos_z = posZ;
+    void set_pz(double posZ) {
+        pz = posZ;
     }
 
-    float get_speed_x() const {
-        return speed_x;
+    double get_vx() const {
+        return vx;
     }
 
-    void set_speed_x(float speedX) {
-        speed_x = speedX;
+    void set_vx(double speedX) {
+        vx = speedX;
     }
 
-    float get_speed_y() const {
-        return speed_y;
+    double get_vy() const {
+        return vy;
     }
 
-    void set_speed_y(float speedY) {
-        speed_y = speedY;
+    void set_vy(double speedY) {
+        vy = speedY;
     }
 
-    float get_speed_z() const {
-        return speed_z;
+    double get_vz() const {
+        return vz;
     }
 
-    void set_speed_z(float speedZ) {
-        speed_z = speedZ;
+    void set_vz(double speedZ) {
+        vz = speedZ;
     }
+
+    double get_ax() const {
+        return ax;
+    }
+
+    void set_ax(double ax) {
+        SPHObject::ax = ax;
+    }
+
+    double get_ay() const {
+        return ay;
+    }
+
+    void set_ay(double ay) {
+        SPHObject::ay = ay;
+    }
+
+    double get_az() const {
+        return az;
+    }
+
+    void set_az(double az) {
+        SPHObject::az = az;
+    }
+
+
 };
 

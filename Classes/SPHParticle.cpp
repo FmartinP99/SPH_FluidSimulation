@@ -2,13 +2,14 @@
 
 class SPHParticle : public SPHObject{
 private:
-    float radius;
+    double radius;
+    double mass;
 public:
     SPHParticle() {
     }
 
-    SPHParticle(float weight, float posX, float posY, float posZ, float speedX, float speedY, float speedZ,
-                float radius) : SPHObject(weight, posX, posY, posZ, speedX, speedY, speedZ), radius(radius) {
+    SPHParticle(double weight, double posX, double posY, double posZ, double speedX, double speedY, double speedZ,
+                double radius, double mass) : SPHObject(weight, posX, posY, posZ, speedX, speedY, speedZ), radius(radius), mass(mass) {
         if (this->radius  <= 0){
             throw std::invalid_argument("The radius of the object must be bigger than 0!");
         }
@@ -17,14 +18,24 @@ public:
     virtual ~SPHParticle() {
     }
 
-    float get_radius() const {
+    double get_radius() const {
         return radius;
     }
 
-    void set_radius(float radius) {
+    void set_radius(double radius) {
         if (radius <= 0){
             throw std::invalid_argument("The radius of the object must be bigger than 0!");
         }
         SPHParticle::radius = radius;
     }
+
+    double get_mass() const {
+        return mass;
+    }
+
+    void set_mass(double mass) {
+        SPHParticle::mass = mass;
+    }
+
+
 };
