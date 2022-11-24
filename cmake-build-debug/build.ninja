@@ -51,31 +51,50 @@ build cmake_object_order_depends_target_SPH_FluidSimulation: phony || CMakeFiles
 
 build CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/main.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
   DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
   OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
   OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir
 
 build CMakeFiles/SPH_FluidSimulation.dir/Classes/Container.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/Container.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
   DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\Container.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
-  OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
-  OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
-
-build CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHObject.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/SPHObject.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
-  DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\SPHObject.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
   OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
   OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
 
 build CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHParticle.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/SPHParticle.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
   DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\SPHParticle.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
   OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
   OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
 
 build CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/Container_temp.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
   DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\Container_temp.cpp.obj.d
-  FLAGS = -g -std=gnu++2a
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
+  OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
+  OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
+
+build CMakeFiles/SPH_FluidSimulation.dir/Classes/Timer.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/Timer.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
+  DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\Timer.cpp.obj.d
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
+  OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
+  OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
+
+build CMakeFiles/SPH_FluidSimulation.dir/Kernel/sph_kernel_temp.c.obj: C_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Kernel/sph_kernel_temp.c || cmake_object_order_depends_target_SPH_FluidSimulation
+  DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Kernel\sph_kernel_temp.c.obj.d
+  FLAGS = -m64 -g
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
+  OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
+  OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Kernel
+
+build CMakeFiles/SPH_FluidSimulation.dir/Classes/OpenCLContainer.cpp.obj: CXX_COMPILER__SPH_FluidSimulation_Debug I$:/Szakdoga/SPH_FluidSimulation/SPH_FluidSimulation/Classes/OpenCLContainer.cpp || cmake_object_order_depends_target_SPH_FluidSimulation
+  DEP_FILE = CMakeFiles\SPH_FluidSimulation.dir\Classes\OpenCLContainer.cpp.obj.d
+  FLAGS = -m64 -g -std=gnu++20
+  INCLUDES = -I"C:/Program Files (x86)/AMD APP SDK/3.0/include" -II:/Szakdoga/MINGW-Freeglut/freeglut/lib/x64 -II:/Szakdoga/MSVC-Freeglut/freeglut/include
   OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
   OBJECT_FILE_DIR = CMakeFiles\SPH_FluidSimulation.dir\Classes
 
@@ -87,9 +106,11 @@ build CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj: CXX_COM
 #############################################
 # Link the executable SPH_FluidSimulation.exe
 
-build SPH_FluidSimulation.exe: CXX_EXECUTABLE_LINKER__SPH_FluidSimulation_Debug CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/Container.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHObject.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHParticle.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lOpenGL32  -lfreeGLUT  -lglu32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build SPH_FluidSimulation.exe: CXX_EXECUTABLE_LINKER__SPH_FluidSimulation_Debug CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/Container.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHParticle.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/Timer.cpp.obj CMakeFiles/SPH_FluidSimulation.dir/Kernel/sph_kernel_temp.c.obj CMakeFiles/SPH_FluidSimulation.dir/Classes/OpenCLContainer.cpp.obj | I$:/Szakdoga/GLUT/glut-amd/lib/x86_64/OpenCL.lib
+  FLAGS = -m64 -g
+  LINK_FLAGS = -static
+  LINK_LIBRARIES = -lOpenGL32  -lfreeglut  -lglu32  I:/Szakdoga/GLUT/glut-amd/lib/x86_64/OpenCL.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_PATH = -LC:/PROGRA~2/AMDAPP~1/3.0/lib/x86_64   -LI:/Szakdoga/MSVC-Freeglut/freeglut
   OBJECT_DIR = CMakeFiles\SPH_FluidSimulation.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

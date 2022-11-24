@@ -1,18 +1,18 @@
 #include <iostream>
 #include <string>
-#include "SPHParticle.cpp"
-#include <cmath>
+#include "SPHParticle.h"
 #include <vector>
 #include <set>
-
-
-class Container{
+#include <cmath>
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+class Container_temp{
 private:
 
     double damping_coeff = 0.3;
     unsigned int gas_constant = 400;
     double kernel_smoother_length = 1;
-    double constant_pressure = 1;
     double U = 1;
 
     unsigned int current_particles = 0;
@@ -37,7 +37,7 @@ private:
     unsigned int max_layer_per_cube_grid;
 public:
 
-    Container(double width, double height, double depth, double gravity, double density, unsigned int particlesNumber, double particle_radius) :
+    Container_temp(double width, double height, double depth, double gravity, double density, unsigned int particlesNumber, double particle_radius) :
             width(width),
             height(height),
             depth(depth),
@@ -62,7 +62,7 @@ public:
 
     }
 
-    virtual ~Container() {
+    virtual ~Container_temp() {
         delete[] particles;
     }
 
@@ -71,8 +71,8 @@ public:
     }
 
     void set_width(unsigned int width) {
-        if(width <=0) throw std::invalid_argument("The width of the container must be bigger than 0!");
-        Container::width = width;
+        if(width <=0) throw std::invalid_argument("The WIDTH of the container must be bigger than 0!");
+        Container_temp::width = width;
     }
 
     double get_height() const {
@@ -80,8 +80,8 @@ public:
     }
 
     void set_height(unsigned int height) {
-        if(height <=0) throw std::invalid_argument("The height of the container must be bigger than 0!");
-        Container::height = height;
+        if(height <=0) throw std::invalid_argument("The HEIGHT of the container must be bigger than 0!");
+        Container_temp::height = height;
     }
 
     double get_depth() const {
@@ -89,8 +89,8 @@ public:
     }
 
     void set_depth(unsigned int depth) {
-        if(depth <=0) throw std::invalid_argument("The depth of the container must be bigger than 0!");
-        Container::depth = depth;
+        if(depth <=0) throw std::invalid_argument("The DEPTH of the container must be bigger than 0!");
+        Container_temp::depth = depth;
     }
 
     double get_particles_number() const {
@@ -106,7 +106,7 @@ public:
     }
 
 
-    void calculate_physics(double dtime){
+    void calculate_physics(const double dtime){
 
         auto* particle_pressures = new double[this->particles_number]{ 0 }; // the other particles pressure
         auto* particle_forces = new double[this->particles_number][3] { { 1 } }; //the force on the particle x,y,z
@@ -134,7 +134,9 @@ public:
             neighbor_particles.push_back(_vector_of_neighbour_pairs);
 
             for(int j = 0; j < neighbor_particles[i].size(); j++){
-                particle_densities[i] += normalization_density * pow((pow(kernel_smoother_length, 2) - pow(neighbor_particles[i][j].second, 2)), 3) * this->particles[neighbor_particles[i][j].first].get_mass();
+                particle_densities[i] += normalization_density * pow(
+                        (pow(kernel_smoother_length, 2) - pow(neighbor_particles[i][j].second, 2)), 3) *
+                                this->particles[neighbor_particles[i][j].first].get_mass();
             }
             if(particle_densities[i] < this->density) particle_densities[i] = this->density;
 
@@ -226,7 +228,7 @@ public:
 
 private:
 
-    unsigned int calculate_grid(SPHParticle elem){
+    unsigned int calculate_grid(const SPHParticle elem){
 
         int current_column = int(elem.get_px() / this->kernel_smoother_length) + 1;
         int current_row = int(elem.get_py() / this->kernel_smoother_length) + 1;
@@ -254,7 +256,7 @@ private:
         return column * row * layer;
     }
 
-    static double calculate_absolute_distance_power2(SPHParticle& elem, SPHParticle& elem2){
+    static double calculate_absolute_distance_power2(const SPHParticle& elem, const SPHParticle& elem2){
         return (elem.get_px() - elem2.get_px())*(elem.get_px() - elem2.get_px()) +
                (elem.get_py() - elem2.get_py())*(elem.get_py() - elem2.get_py()) +
                (elem.get_pz() - elem2.get_pz())*(elem.get_pz() - elem2.get_pz());
@@ -287,7 +289,7 @@ private:
 
     }
 
-    void fill_container_gradually(double radius){
+    void fill_container_gradually(const double radius){
         int row = 0;
         int column = 0;
         double x_cor;
@@ -318,7 +320,7 @@ private:
         }
     }
 
-    void fill_container(double radius){
+    void fill_container(const double radius){
         unsigned z_sor = 0;
         unsigned y_sor = 1;
         double offset = radius * 3;

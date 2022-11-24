@@ -1,0 +1,12 @@
+#define PARTICLES_NUMBER 2400 //37 FPS WITH 800 PARTICLE  at 10-10
+float WIDTH = 100, HEIGHT = 30, DEPTH = 1, gravity = -10, density = 1;
+
+around 34fps
+
+
+
+project(OpenCL_01_pelda)
+cmake_minimum_required(VERSION 3.18)
+find_package(OpenCL REQUIRED)
+add_executable(test_tgt host.cpp device.cl)
+target_link_libraries(test_tgt OpenCL::OpenCL)

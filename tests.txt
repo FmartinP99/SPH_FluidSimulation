@@ -1,0 +1,1 @@
+without any multi threading 27FPS / 2400 particle
