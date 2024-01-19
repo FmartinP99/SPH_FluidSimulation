@@ -1,7 +1,3 @@
-//
-// Created by treki on 2022. 10. 21..
-//
-
 #ifndef SPH_FLUIDSIMULATION_CONTAINER_H
 #define SPH_FLUIDSIMULATION_CONTAINER_H
 #include <iostream>

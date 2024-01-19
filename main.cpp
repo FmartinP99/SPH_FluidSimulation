@@ -17,9 +17,8 @@
 #endif
 #include <CL/cl.hpp>
 
-
 //COMMAND LINE ARGUMENTS
-int PARTICLES_NUMBER; //37 FPS WITH 800 PARTICLE  -- old, 37 FPS WITH 2400 NOW - 1 THREAD
+int PARTICLES_NUMBER;
 float WIDTH = 30, HEIGHT = 30, DEPTH = 5;
 bool IS_NAIVE = false;
 bool IS_GPU = false;
@@ -29,7 +28,7 @@ int FPS_NUMBER = 60;
 
 
 float gravity = -10, density = 1;
-float radius= 0.1;
+float radius= 0.40;
 
 int xOrigin = -1;
 int yOrigin = -1;
@@ -59,13 +58,11 @@ void passToGPU(OpenCLContainer &helper, Container* container) {
     auto context = helper.getContext();
     auto devices = helper.getDevices();
     auto kernelUpdate = helper.updateKernel;
-    auto containerBuffer = helper.inputBuffer;
     auto dtimeBuffer = helper.dtimeBuffer;
     auto particleBuffer = helper.particleBuffer;
     auto enviromentarrayBuffer = helper.enviromentarrayBuffer;
-    auto testBuffer = helper.testBuffer;
 
-    //std::cout << containersize + containerParticleLength * particlesize << std::endl;
+
 
     container->set_current_iteration(container->get_current_iteration() + 1);
     if(container->get_current_particles() < container->get_particles_number() && container->get_current_iteration() % container->get_new_particles_every_iteration() == 0)
@@ -221,7 +218,7 @@ void idle(int){
 
 void write_to_csv(bool failed){
     std::ofstream file;
-    file.open("I:\\Szakdoga\\SPH_FluidSimulation\\SPH_FluidSimulation\\results.csv", std::ios_base::out | std::ios_base::app);
+    file.open("results.csv", std::ios_base::out | std::ios_base::app);
 
     int failed_num = 0;
     if (failed) failed_num = 1;
@@ -325,13 +322,13 @@ void renderScene() {
     }
     global_tick_count += 1;
     long long end_time = duration_cast<seconds>(system_clock::now().time_since_epoch()).count();
-    //
+    /*
     if (global_tick_count > 1500 || end_time - START_TIME > 1200) { //maximum tickig megy vagy maximum 20 percig
         if (end_time - START_TIME > 1200) write_to_csv(true);
         else write_to_csv(false);
         glutDestroyWindow(glutGetWindow());
     }
-
+     */
 }
 
 void set_variables(int argc, char** argv){
@@ -406,7 +403,7 @@ int main(int argc, char **argv) {
 
 
         openClContainer = new OpenCLContainer(KERNEL_PATH,
-                                              *container, dtime, PARTICLES_NUMBER);
+                                              *container, PARTICLES_NUMBER);
     }
     x = WIDTH / 2;
     y = HEIGHT / 2;

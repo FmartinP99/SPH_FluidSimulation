@@ -13,7 +13,6 @@ Container::Container(double width, double height, double depth, double gravity, 
     if(this->width <= 0 || this->height <=0 || this->depth <=0 || particles_number <=0){
         throw std::invalid_argument("Every value of the container's attribute must be bigger than 0!");
     }
-   // fill_container(particle_radius);
     max_number_of_grids = calculate_max_grid_number();
     std::cout<<normalization_density<<std::endl;
     std::cout<<norm_pressure<<std::endl;
@@ -143,7 +142,6 @@ void Container::calculate_physics(double dtime){
     auto* particle_forces = new double[particles_number][3] { { 1 } }; //the force on the particle x,y,z
     auto* particle_densities = new double[particles_number]{ 0 }; // store each density at the particles location
 
-    // int részecske indexe, double részecske távolsága egy részecskétől [ első_részecske_szomszédok:[[], [], [], []], második_részecske_szomszédpk:[[].[],[],[]], ]
     std::vector<std::vector<std::pair<int, double>>> neighbor_particles;
 
 
@@ -156,11 +154,11 @@ void Container::calculate_physics(double dtime){
         std::vector<std::pair<int, double>> _vector_of_neighbour_pairs;
         SPHParticle &elem = particles[i];
 
-        std::set<int> _nieghbour_grids = neighbouring_grids[calculate_grid(elem) - 1]; // 1 ->  {2, 6, 7, 26, 27, 31, 32}  5X5 kocka esetén ami a tömb 0. indexén van
+        std::set<int> _nieghbour_grids = neighbouring_grids[calculate_grid(elem) - 1];
 
         for (auto n_grid: _nieghbour_grids) {
 
-            // i - current particle, n_grid - szomszédos grid, - particles on grid - részecskék a szomszédos griden
+
             for (auto j: particles_on_grid[n_grid - 1]) {
 
                 if (i != j) {
@@ -267,14 +265,14 @@ void Container::fill_container_gradually2(const double radius){
     int column = 0;
     double x_cor;
     double z_cor;
-    int max_particle_per_row = this->width / kernel_smoother_length; // so they are chill
-    int max_particle_per_column = this->depth / kernel_smoother_length; // so they are chill
+    int max_particle_per_row = this->width / kernel_smoother_length;
+    int max_particle_per_column = this->depth / kernel_smoother_length;
 
     for(int i = 0; i < 200; i++) {
         this->particles[current_particles] = SPHParticle(1,  column * kernel_smoother_length/2, height - 2 * radius, row * kernel_smoother_length/2,
                                                         10, -10, -13, radius, 1);
 
-        //   üstd::cout<<current_particles<<std::endl;
+
 
         this->current_particles++;
         if(this->current_particles == this->particles_number) break;
@@ -382,8 +380,8 @@ void Container::check_boundaries(SPHParticle& elem) const{
 void Container::fill_container_gradually(double radius){
     int row = 0;
     int column = 0;
-    int max_particle_per_row = width / kernel_smoother_length; // so they are chill
-    int max_particle_per_column = depth / kernel_smoother_length; // so they are chill
+    int max_particle_per_row = width / kernel_smoother_length;
+    int max_particle_per_column = depth / kernel_smoother_length;
 
     for(int i = 0; i < 20; i++) {
 
@@ -525,7 +523,7 @@ std::set<int> Container::calculate_neighboring_grids(int given_grid){
         vector_to_compare.push_back(given_grid + left_front);
         vector_to_compare.push_back(given_grid + down_left_front);
 
-    }else if (given_grid == max_number_of_grids - back + 1){ // bal felső hátsó
+    }else if (given_grid == max_number_of_grids - back + 1){
 
         vector_to_compare.push_back(given_grid + right);
         vector_to_compare.push_back(given_grid + up);
@@ -650,7 +648,7 @@ std::set<int> Container::calculate_neighboring_grids(int given_grid){
         vector_to_compare.push_back(given_grid + up_left_back);
         vector_to_compare.push_back(given_grid + down_left_back);
 
-    }else if(given_grid > max_number_of_grids - front && given_grid < max_number_of_grids - front + max_column_per_row_grid){ //ez volt hibás
+    }else if(given_grid > max_number_of_grids - front && given_grid < max_number_of_grids - front + max_column_per_row_grid){
 
         vector_to_compare.push_back(given_grid + left);
         vector_to_compare.push_back(given_grid + right);

@@ -12,24 +12,22 @@ private:
     std::vector<cl::Device> devices;
     cl::Device device;
 
-    void programCreate(const std::string &file, const Container &hostBuffer, float dtime, unsigned int max_particles);
+    void create_program(const std::string &file, const Container &hostBuffer, unsigned int _max_particles);
     void getError(const cl::Program&, int err);
-    static auto getSource(std::string const& fileName);
+    static auto get_source(std::string const& fileName);
 
 public:
     unsigned int max_particles;
-    OpenCLContainer(const std::string& file, Container &hostBuffer, float dtime, unsigned int max_particles);
+    OpenCLContainer(const std::string& file, Container &hostBuffer, unsigned int max_particles);
     cl::Program& getProgram();
     cl::Context& getContext();
     std::vector<cl::Device>& getDevices();
     cl::Device& getDevice();
 
     cl::Kernel updateKernel;
-    cl::Buffer inputBuffer;
     cl::Buffer dtimeBuffer;
     cl::Buffer particleBuffer;
     cl::Buffer enviromentarrayBuffer;
-    cl::Buffer testBuffer;
     cl::CommandQueue queue;
 };
 

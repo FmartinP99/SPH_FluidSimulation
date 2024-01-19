@@ -1,21 +1,10 @@
 # ninja log v5
 60	171	6887838800632912	CMakeFiles/SPH_FluidSimulation.dir/Kernel/sph_kernel_temp.c.obj	4a5f571112d12034
-5	3029	6887838829198778	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
-3029	3691	6887838835802385	SPH_FluidSimulation.exe	9cca3a6df85b412c
-13	1476	6887838813682922	CMakeFiles/SPH_FluidSimulation.dir/Classes/Container.cpp.obj	359653e04d6fc196
-34	865	6887838807582920	CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHParticle.cpp.obj	cb08fd27edd9e939
-1	129	6887839965249071	build.ninja	13abcbd071e78682
-20	1095	6887838809892919	CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj	10362c78821fc2cf
-78	1092	6887838809852927	CMakeFiles/SPH_FluidSimulation.dir/Classes/Timer.cpp.obj	283578279515a7fa
-97	2501	6887838823942895	CMakeFiles/SPH_FluidSimulation.dir/Classes/OpenCLContainer.cpp.obj	dd97e24fc85ccfc0
-5	3190	6887850507748190	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
-3190	3845	6887850514278186	SPH_FluidSimulation.exe	9cca3a6df85b412c
-13	736	6887853487439065	CMakeFiles/SPH_FluidSimulation.dir/Classes/Timer.cpp.obj	283578279515a7fa
-5	3106	6887853511109059	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
-3107	3928	6887853519309040	SPH_FluidSimulation.exe	9cca3a6df85b412c
-5	3069	6887853940825007	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
-3070	3719	6887853947285002	SPH_FluidSimulation.exe	9cca3a6df85b412c
-5	2984	6887854694574738	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
-2984	3625	6887854700964741	SPH_FluidSimulation.exe	9cca3a6df85b412c
 5	3219	6887856124677247	CMakeFiles/SPH_FluidSimulation.dir/main.cpp.obj	6fd2f1e80ed1d87b
 3219	3904	6887856131497271	SPH_FluidSimulation.exe	9cca3a6df85b412c
+13	1476	6887838813682922	CMakeFiles/SPH_FluidSimulation.dir/Classes/Container.cpp.obj	359653e04d6fc196
+34	865	6887838807582920	CMakeFiles/SPH_FluidSimulation.dir/Classes/SPHParticle.cpp.obj	cb08fd27edd9e939
+1	129	6920580501258612	build.ninja	13abcbd071e78682
+20	1095	6887838809892919	CMakeFiles/SPH_FluidSimulation.dir/Classes/Container_temp.cpp.obj	10362c78821fc2cf
+13	736	6887853487439065	CMakeFiles/SPH_FluidSimulation.dir/Classes/Timer.cpp.obj	283578279515a7fa
+97	2501	6887838823942895	CMakeFiles/SPH_FluidSimulation.dir/Classes/OpenCLContainer.cpp.obj	dd97e24fc85ccfc0

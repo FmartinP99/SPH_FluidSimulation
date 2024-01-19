@@ -17,13 +17,6 @@ include_directories("I:/Szakdoga/MSVC-Freeglut/freeglut/include")
 
 
 
-add_executable(SPH_FluidSimulation main.cpp Classes/Container.h Classes/Container.cpp Classes/SPHParticle.cpp Classes/Container_temp.cpp Classes/Timer.cpp CL/Common.h CL/cl.hpp CL/opencl.hpp Kernel/sph_kernel_temp.c Classes/OpenCLContainer.cpp Classes/OpenCLContainer.h Classes/SPHParticle.h)
-#32 bit gcc
-#target_link_libraries(SPH_FluidSimulation -lOpenGL32 -lfreeGLUT -lglu32)
-#32 bit msvc
-#target_link_libraries(SPH_FluidSimulation I:\\Szakdoga\\MSVC-Freeglut\\freeglut\\lib\\Win32\\freeglut.lib I:\\Szakdoga\\GLUT\\glut-amd\\lib\\glut32.lib)
-
-#target_link_libraries(SPH_FluidSimulation I:\\Szakdoga\\MSVC-Freeglut\\freeglut\\lib\\freeglut.lib I:\\Szakdoga\\GLUT\\glut-amd\\lib\\x86_64\\glut64.lib I:\\Szakdoga\\GLUT\\glut-amd\\lib\\x86_64\\OpenCL.lib)
-
+add_executable(SPH_FluidSimulation main.cpp Classes/Container.h Classes/Container.cpp Classes/SPHParticle.cpp Classes/Container_temp.cpp Classes/Timer.cpp CL/cl.hpp CL/opencl.hpp Classes/OpenCLContainer.cpp Classes/OpenCLContainer.h Classes/SPHParticle.h)
 
 target_link_libraries(SPH_FluidSimulation -lOpenGL32 -lfreeglut -lglu32 I:\\Szakdoga\\GLUT\\glut-amd\\lib\\x86_64\\OpenCL.lib)
