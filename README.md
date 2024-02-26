@@ -1,5 +1,9 @@
-# SPH_FluidSimulation
 
+# REFERENCE ARTICLE
+
+https://matthias-research.github.io/pages/publications/sca03.pdf <br>
+**D. C. a. M. G. Matthias Müller, „Particle-Based Fluid Simulation for Interactive Applications,” ParticleBased Fluid Simulation for Interactive Applications, 2003.**
+# SPH_FluidSimulation
 
 This SPH Fluid Simulation is a bit different, than the others.<br>
 The particles have no edges; they are merely points in space.<br>  So this means, since they can get really close to eachother, <br>
