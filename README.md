@@ -8,7 +8,7 @@ https://matthias-research.github.io/pages/publications/sca03.pdf <br>
 This SPH Fluid Simulation is a bit different, than the others.<br>
 The particles have no edges; they are merely points in space.<br>  So this means, since they can get really close to eachother, <br>
 the numbers in the calcualtions can be really large or really small. To combat this, I had to use *double* types instead of *float*.<br><br>
-The problem with *double* types is, that the modern consumable GPU's are not optimized for *double* operations, so its way slower than it'd be with float operations.<br>
+The problem with *double* types is, that the modern consumable GPU's are not optimized for *double* operations, so it is way slower than it'd be with float operations.<br>
 
 The non-naive CPU algorithm divides the 3D space into cubes.<br>
 When the program calculates the force exerted on a particular particle by other particles,<br> it only considers the particles within its own cube and those in the neighboring cubes.<br>
